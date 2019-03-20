@@ -1,23 +1,34 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+  <div>
+    <router-view></router-view>
+    <mt-tabbar v-model="tabSelected">
+      <mt-tab-item id="home">
+        首页
+      </mt-tab-item>
+      <mt-tab-item id="shopcart">
+        购物车
+      </mt-tab-item>
+    </mt-tabbar>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  data () {
+    return {
+      tabSelected: 'home'
+    }
+  },
+  watch: {
+    tabSelected (newValue, oldValue) {
+      this.$router.push({
+        name: newValue
+      })
+    }
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import './assets/css/reset.less'; 
 </style>
