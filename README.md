@@ -14,3 +14,9 @@ npm i axios mint-ui -S
 ```
 npm install less less-loader --sava-dev
 ```
+
+安装mock
+```
+npm install mockjs --save-dev
+```
+[mock使用文档](/doc/mock使用.md)
