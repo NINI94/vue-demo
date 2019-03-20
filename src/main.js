@@ -4,6 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+// 配置axios
+import Axios from 'axios'
+// 配置公共URL
+Axios.defaults.baseURL = ''
+Vue.prototype.$axios = Axios
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
